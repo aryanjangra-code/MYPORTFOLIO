@@ -7,16 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <style>
-        /* CSS Reset & Global Styles */
         :root {
-            --primary-color: #2dd4bf; /* teal-400 */
-            --primary-hover: #14b8a6; /* teal-500 */
-            --dark-bg: #111827;       /* gray-900 */
-            --medium-bg: #1f2937;    /* gray-800 */
-            --light-bg: #374151;     /* gray-700 */
-            --text-light: #d1d5db;    /* gray-300 */
-            --text-medium: #9ca3af;   /* gray-400 */
-            --text-dark: #f9fafb;     /* gray-100 */
+            --primary-color: #2dd4bf;
+            --primary-hover: #14b8a6;
+            --dark-bg: #111827;    
+            --medium-bg: #1f2937;
+            --light-bg: #374151;    
+            --text-light: #d1d5db;   
+            --text-medium: #9ca3af; 
+            --text-dark: #f9fafb;     
         }
 
         html {
@@ -31,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Simple scrollbar styling */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -46,7 +44,6 @@
             background: #4b5563;
         }
 
-        /* Layout */
         .container {
             max-width: 1100px;
             margin-left: auto;
@@ -59,7 +56,6 @@
             padding: 5rem 0;
         }
 
-        /* Header & Navigation */
         .main-header {
             background-color: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(10px);
@@ -90,7 +86,7 @@
         }
 
         .nav-links {
-            display: none; /* Hidden by default, shown on larger screens */
+            display: none;
         }
         
         .nav-links a {
@@ -149,14 +145,13 @@
             margin-top: 0.5rem;
         }
 
-        /* Hero Section */
         #home {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 4.5rem; /* Offset for fixed header */
+            padding-top: 4.5rem;
         }
 
         #home h1 {
@@ -169,7 +164,7 @@
             font-size: 1.25rem;
             color: var(--primary-color);
             margin-bottom: 2rem;
-            height: 2rem; /* Reserve space for typing effect */
+            height: 2rem; 
         }
 
         .cta-button {
@@ -194,7 +189,6 @@
             margin-bottom: 3rem;
         }
 
-        /* About Section */
         .about-content {
             display: flex;
             flex-direction: column;
@@ -245,7 +239,6 @@
             font-weight: 500;
         }
 
-        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -300,7 +293,6 @@
             margin-left: 0.25rem;
         }
         
-        /* Contact Section */
         #contact p {
             text-align: center;
             color: var(--text-medium);
@@ -328,7 +320,7 @@
             border-radius: 0.5rem;
             color: var(--text-light);
             font-size: 1rem;
-            box-sizing: border-box; /* Important for padding */
+            box-sizing: border-box;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
         .form-group input:focus, .form-group textarea:focus {
@@ -352,7 +344,6 @@
             background-color: var(--primary-color);
         }
 
-        /* Footer */
         .main-footer {
             background-color: rgba(31, 41, 55, 0.5);
             margin-top: 4rem;
@@ -372,7 +363,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Fade-in Animation */
         .section-fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -383,11 +373,13 @@
             transform: translateY(0);
         }
 
-        /* Responsive Media Queries */
         @media (min-width: 768px) {
             .nav-links {
                 display: flex;
                 align-items: center;
+            }
+            #home{
+                min-height: 100vh;
             }
             .mobile-menu-btn {
                 display: none;
@@ -537,24 +529,20 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Feather Icons
             feather.replace();
 
-            // Mobile Menu Toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('active');
             });
             
-            // Close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.remove('active');
                 });
             });
 
-            // Typing Effect
             const typingText = "Frontend Developer learning Backend.";
             const typingElement = document.getElementById('typing-effect');
             let i = 0;
@@ -567,7 +555,6 @@
             }
             typeWriter();
 
-            // Fade-in sections on scroll
             const sections = document.querySelectorAll('.section-fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -585,4 +572,5 @@
     </script>
 </body>
 </html>
+
 
